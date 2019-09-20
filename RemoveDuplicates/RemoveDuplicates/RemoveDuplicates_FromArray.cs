@@ -2,7 +2,7 @@
 
 namespace RemoveDuplicates
 {
-    class Program
+    class RemoveDuplicates_FromArray
     {
         static void Main(string[] args)
         {
