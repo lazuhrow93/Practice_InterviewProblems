@@ -25,8 +25,8 @@ namespace TwoSums
             int unsortedArr_crawler = l;
             int endOf_algorithm = l;
 
-
-            List<int> left_arr = new List<int>();
+            //grabbing the left side and right side
+            List<int> left_arr = new List<int>(); 
             List<int> right_arr = new List<int>();
 
             //copy left side
@@ -43,6 +43,7 @@ namespace TwoSums
 
 
             //putting the values in order for this range of the list
+            //referencing the new lists that we made, then editing unsortedArr (ref) with the results
             while (crawler_left < left_arr.Count && crawler_right < right_arr.Count)
             {
                 if(left_arr[crawler_left] <= right_arr[crawler_right]){
@@ -60,13 +61,14 @@ namespace TwoSums
             }
 
             //add the rest of the values. 
+            //add the left array if all the values on the right side were <
             while(crawler_left < left_arr.Count)
             {
                 unsortedArr[endOf_algorithm] = left_arr[crawler_left];
                 ++crawler_left;
                 ++endOf_algorithm;
             }
-
+            //add the right array if all the values on the left side were <
             while(crawler_right < right_arr.Count)
             {
                 unsortedArr[endOf_algorithm] = right_arr[crawler_right];
