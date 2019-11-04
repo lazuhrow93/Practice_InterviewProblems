@@ -1,4 +1,6 @@
-public int returnMax(int i, int j){
+public class Solution {
+    
+    public int returnMax(int i, int j){
         if(i > j) return i;
         else return j;
     }
@@ -49,12 +51,19 @@ public int returnMax(int i, int j){
             
             
         }
+        
+        
+            
+
             if(odd) return median;
             if(a_partition == a_small.Length) return (median + b_big[b_partition]) /2.0;
             if(b_partition == b_big.Length) return (median + a_small[a_partition]) /2.0;
             
             //even
             return (median+returnMin(a_small[a_partition], b_big[b_partition]))/2.0;
+        
+        
+        
         
     }
     
@@ -64,3 +73,4 @@ public int returnMax(int i, int j){
         else return findMedianBetweenTwoArrays(nums1, nums2);
         
     }
+}
