@@ -1,10 +1,10 @@
 # Median of Two sorted Arrays
 
-There are two sorted arrays nums1 and nums2 of size m and n respectively.
+There are two sorted arrays __nums1__ and __nums2__ of size m and n respectively.
 
 Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 
-You may assume nums1 and nums2 cannot be both empty.
+You may assume __nums1__ and __nums2__ cannot be both empty.
 
 
 ## Example 1:
