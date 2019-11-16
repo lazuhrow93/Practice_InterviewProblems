@@ -6,7 +6,12 @@
 /// </summary>
 public class Solution
 {
-	public string LongestPalindrome(string s)
+    public string LongestPalindrome(string s)
+    {
+        return "";
+    }
+
+	public string wrong_LongestPalindrome(string s)
     {
 
         string winner = "";
