@@ -6,8 +6,54 @@
 /// </summary>
 public class Solution
 {
+    public int testChar(string s, int start, int end)
+    {
+        int left_pt = start;
+        int right_pt = end;
+
+        while(left_pt >= 0 && right_pt < s.Length && s[left_pt] == s[right_pt])
+        {
+                //expand outwards to check the next chars
+                --left_pt;
+                ++right_pt;
+        }
+
+        return right_pt - left_pt - 1; //return the length of the current palindrome
+
+    }
+
     public string LongestPalindrome(string s)
     {
+        //trying to widen out from each character. 
+
+        string winner_substr = "";
+
+        //gettting rid of the edge cases
+        if (s.Length == 0) return "";
+        else if (s.Length == 1) return s;
+        else winner_substr = s[0].ToString();
+
+        int start = 0, end = 0; //current indicies for longest palindrome
+
+        for(int string_crawler = 0; string_crawler < s.Length; ++string_crawler)
+        {
+            int test_sub1 = testChar(s, string_crawler, string_crawler);
+            int test_sub2 = testChar(s, string_crawler, string_crawler + 1);
+
+            int longestSub = Math.Max(test_sub1, test_sub2); //this will give you the longest sub palindrome
+
+            if(longestSub > end - start) //if longer than the previous one
+            {
+                //get the left/right side of the test char that is a palindrome
+                start = string_crawler - (longestSub - 1) / 2;
+                end = string_crawler + longestSub / 2;
+            }
+
+            
+        }
+        return s.Substring(start, end - start + 1);
+
+
         return "";
     }
 
