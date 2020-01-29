@@ -1,0 +1,40 @@
+public class Solution {
+    
+    public int returnMin(int x, int y){
+        if(x < y) return x;
+        else return y;
+    }
+    
+    public int MaxArea(int[] height) {
+        //find the biggest area. 
+        
+        int max_area = 0;
+        
+        int bar1_y = 0;
+        int bar2_y = 0;
+        
+        int bar1_x = 0;
+        int bar2_x = 0;
+        
+        int x_length = bar2_x - bar1_x;
+        int temp_area = 0;
+        
+        for(bar1_x = 0; bar1_x < height.Length; bar1_x++){
+            bar1_y = height[bar1_x];
+            for(bar2_x = bar1_x+1; bar2_x < height.Length; bar2_x++){
+                bar2_y = height[bar2_x];
+                
+                x_length = bar2_x - bar1_x;
+                temp_area = x_length * returnMin(bar1_y,bar2_y);
+                
+                if(max_area < temp_area){
+                    max_area = temp_area;
+                }
+                
+            }
+        }
+        
+        return max_area;
+        
+    }
+}
