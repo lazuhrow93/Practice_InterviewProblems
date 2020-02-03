@@ -18,6 +18,7 @@ public class Solution {
             roman_rep += "CM";
         }
         
+        //get rid of 900s;
         num = num % 900;
         if(num == 0) return roman_rep;
         
@@ -25,15 +26,17 @@ public class Solution {
             roman_rep += "D";
         }
         
+        //get rid of 500s;
         num = num % 500;
-        if(num == 0) return roman_rep;
+        if(num == 0) return roman_rep; // if 0, then were done
         
         if(num >= 400){
             roman_rep += "CD";
         }
         
+        //get rid of 400s;
         num = num % 400;
-        if(num == 0) return roman_rep;
+        if(num == 0) return roman_rep;// if 0, then were done
         
         if(num >= 100){
             num_of_chars = num/100;
@@ -48,7 +51,7 @@ public class Solution {
         }
         
         num = num % 90;
-        if(num == 0) return roman_rep;
+        if(num == 0) return roman_rep;// if 0, then were done
         
         if(num >= 50){
             roman_rep += "L";
